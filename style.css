@@ -1,169 +1,184 @@
 :root {
-    --font_size: 20px;
-    --primary_font: Roboto, "Courier New", Courier, monospace;
-    --primary_color: rgb(214, 65, 65);
-    --red_color: rgb(214, 65, 65);
-    --green_color: rgb(49, 122, 67);
-    --blue_color: rgb(44, 33, 94);
-    --orange_color: rgb(185, 89, 25);
+  --font_size: 20px;
+  --primary_font: Roboto, 'Courier New', Courier, monospace;
+  --primary_color: rgb(214, 65, 65);
+  --red_color: rgb(214, 65, 65);
+  --green_color: rgb(49, 122, 67);
+  --blue_color: rgb(44, 33, 94);
+  --orange_color: rgb(235, 166, 5);
 }
 
-/*  BLOBAL  */
+/*  GLOBAL  */
 
 html {
-    font-size: var(--font_size);
-    font-family: var(--primary_font);
+  font-size: var(--font_size);
+  font-family: var(--primary_font);
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary_color);
+  text-decoration: none;
+  color: var(--primary_color);
 }
 
 li {
-    list-style-type: none;
-    cursor: pointer;
+  list-style-type: none;
+  cursor: pointer;
 }
 
 /* BUTTONS */
 
 button,
 .btn {
-    padding: 0.5rem;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
+  padding: 0.5rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
 .btn-red {
-    border: 1px solid var(--primary_color);
-    color: var(--primary_color);
-    transition: all 0.5s ease;
+  border: 1px solid var(--primary_color);
+  color: var(--primary_color);
+  transition: all 0.5s ease;
 }
 
 .btn-red:hover {
-    background-color: var(--primary_color);
+  background-color: var(--primary_color);
 }
 
 .btn-red:hover a {
-    color: #fff;
+  color: #fff;
 }
 
 .btn-green {
-    color: var(--green_color);
-    border: 1px solid var(--green_color);
-    transition: all 0.5s ease;
+  color: var(--green_color);
+  border: 1px solid var(--green_color);
+  transition: all 0.5s ease;
 }
 
 .btn-green:hover {
-    background-color: var(--green_color);
-    color: #fff;
+  background-color: var(--green_color);
+  color: #fff;
 }
 
 .active {
-    color: var(--primary_color);
-    transition: 0.3s ease;
+  color: var(--primary_color);
+  transition: 0.3s ease;
+}
+
+.btn-select {
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.btn-select.red {
+  background-color: var(--red_color);
+}
+
+.btn-select.green {
+  background-color: var(--green_color);
+}
+
+.btn-select.blue {
+  background-color: var(--blue_color);
+}
+
+.btn-select.orange {
+  background-color: var(--orange_color);
 }
 
 /* CARD */
 
 .card {
-    height: auto;
-    overflow: hidden;
-    transition: height 0.3s ease-out;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  height: auto;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .post {
-    height: inherit
+  height: inherit;
 }
 
-.post_eader {
-    padding: 2rem;
+.post_header {
+  padding: 2rem;
 }
 
 .post_content {
-    max-height: 0;
+  max-height: 0;
 }
 
 .post h3 {
-    color: var(--primary_color);
+  color: var(--primary_color);
 }
 
 .post button {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 /* LAYOUT */
 
 #header {
-    margin: 2rem 1.5rem 6rem 1.5rem;
+  margin: 2rem 1.5rem 6rem 1.5rem;
 }
 
 #main,
 #footer {
-    margin: 1.5rem;
+  margin: 1.5rem;
 }
 
-/* EADER */
+/* HEADER */
 
-header nav {
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+#header nav {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
-header ul {
-    display: flex;
-    justify-content: space-between;
+#header ul {
+  display: flex;
+  justify-content: end;
+}
+
+#header li {
+  margin-left: 1rem;
 }
 
 /* MAIN */
 
-.main_eader {
-    margin-bottom: 3rem;
+.main_header {
+  margin-bottom: 3rem;
 }
 
 form select {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 
 .main_list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /* FOOTER */
 
 #footer {
-    margin-top: 9rem;
-    padding: 2rem;
-    border-top: 1px dotted var(--primary_color);
+  margin-top: 9rem;
+  padding: 2rem;
+  border-top: 1px dotted var(--primary_color);
 }
 
 /* MEDIA QUERIES */
 
-@media (min-width: 700px) {
-    header ul {
-        display: flex;
-        justify-content: end;
-    }
-
-    header li {
-        margin-left: 1rem;
-    }
-}
-
 @media (min-width: 1200px) {
-    #main {
-        max-width: 1200px;
-        margin: 1.5rem auto;
-    }
+  #main {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+  }
 }

@@ -93,6 +93,32 @@ button,
   background-color: var(--orange_color);
 }
 
+.btn-select.cards-light {
+  position: relative;
+  width: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  background: rgba(128, 128, 128, 0.561);
+}
+
+.btn-select.cards-light::before {
+  position: absolute;
+  left: -5px;
+  top: -3px;
+  content: ' ';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--primary_color);
+  transition: left 0.5s ease;
+}
+
+.btn-select.cards-light.active::before {
+  left: 50%;
+  top: -3px;
+}
+
 /* CARD */
 
 .card {
@@ -154,7 +180,14 @@ button,
 /* MAIN */
 
 .main_header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 3rem;
+}
+
+.main_color,.light_cards{
+  padding: 1rem 0;
 }
 
 form select {

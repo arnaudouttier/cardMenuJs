@@ -46,4 +46,11 @@ const setCssVariable = (element) => {
   }
 }
 
+document.querySelector('.cards-light').addEventListener('click' , event => {
+  event.currentTarget.classList.toggle('active')
+})
+
+
+
+
 activeCurrentNavLink()

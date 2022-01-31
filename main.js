@@ -14,9 +14,9 @@ document
 
 document
   .querySelectorAll('.card')
-  .forEach((item) => item.addEventListener('mouseout', () => reduceCard(item)))
+  .forEach((item) => item.addEventListener('mouseout', () => reduce(item)))
 
-const reduceCard = (element) => {
+const reduce = (element) => {
   let postheader = element
     .querySelector('.post .post_header')
     .getBoundingClientRect().height

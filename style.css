@@ -1,6 +1,6 @@
 :root {
   --font_size: 20px;
-  --primary_font: Roboto, 'Courier New', Courier, monospace;
+  --primary_font: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
   --primary_color: rgb(214, 65, 65);
   --red_color: rgb(214, 65, 65);
   --green_color: rgb(49, 122, 67);
@@ -13,6 +13,11 @@
 html {
   font-size: var(--font_size);
   font-family: var(--primary_font);
+}
+
+::selection {
+  background: var(--primary_color);
+  color: #fff;
 }
 
 * {
@@ -124,16 +129,21 @@ button,
 .card {
   overflow: hidden;
   transition: height 0.3s ease-out;
-
   border-radius: 0;
   box-shadow: none;
-  border-bottom: 1px dotted var(--primary_color);
+  border-top: 2px solid var(--primary_color);
+}
+
+.card:last-child {
+  border-bottom: 2px solid var(--primary_color);
+}
+
+.card:hover .post h3 {
+  text-decoration: underline var(--primary_color);
 }
 
 .card.light {
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-align: right;
 }
 
 .post_header {
@@ -153,7 +163,24 @@ button,
 }
 
 .post h3 {
+  font-size: calc(25px + 1.55vw);
+  line-height: 1.1em;
+  font-weight: 400;
+  letter-spacing: -0.2rem;
   color: var(--primary_color);
+  margin-bottom: 2rem;
+}
+
+.post_meta {
+  font-size: 13px;
+}
+
+.post_meta span:first-child {
+  margin-right: 2rem;
+}
+
+.cat_links strong {
+  margin-right: 0.3rem;
 }
 
 .post button {
@@ -186,6 +213,32 @@ button,
 
 #header li {
   margin-left: 1rem;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  position: relative;
+}
+
+#header li:hover {
+  color: var(--primary_color);
+}
+
+#header li::after {
+  background: var(--primary_color);
+  position: absolute;
+  content: '';
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+#header li:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 /* MAIN */

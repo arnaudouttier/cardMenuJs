@@ -122,31 +122,43 @@ button,
 /* CARD */
 
 .card {
-  height: auto;
   overflow: hidden;
   transition: height 0.3s ease-out;
+
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px dotted var(--primary_color);
+}
+
+.card.light {
+  border: 0;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.post {
-  height: inherit;
-}
-
 .post_header {
-  padding: 2rem;
+  padding: 3rem 0;
 }
 
 .post_content {
-  max-height: 0;
+  padding: 0 0 3rem 0;
+}
+
+.card.light .post_header {
+  padding: 3rem 1rem;
+}
+
+.card.light .post_content {
+  padding: 0 1rem 3rem 1rem;
 }
 
 .post h3 {
+  text-transform: uppercase;
   color: var(--primary_color);
 }
 
 .post button {
-  margin: 1rem 0;
+  margin-top: 2rem;
 }
 
 /* LAYOUT */
@@ -186,7 +198,8 @@ button,
   margin-bottom: 3rem;
 }
 
-.main_color,.light_cards{
+.main_color,
+.light_cards {
   padding: 1rem 0;
 }
 

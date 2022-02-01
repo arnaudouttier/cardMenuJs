@@ -1,3 +1,12 @@
+const initCard = () => {
+  const postheader = document
+    .querySelector('.post .post_header')
+    .getBoundingClientRect().height
+  document.querySelectorAll('.card').forEach(c => c.style.height = postheader + 'px')
+}
+
+initCard()
+
 const activeCurrentNavLink = () => {
   document.querySelectorAll('nav ul li').forEach((navLink) =>
     navLink.addEventListener('click', (event) => {
@@ -8,28 +17,26 @@ const activeCurrentNavLink = () => {
   )
 }
 
+const reduceCard = (element) => {
+  let postheader = element
+    .querySelector('.post .post_header')
+    .getBoundingClientRect().height
+  element.style.height = postheader + 'px'
+}
+
+const expandCard = (element) => {
+  let post = element
+    .querySelector('.post').getBoundingClientRect().height
+  element.style.height = post + 'px'
+}
+
 document
   .querySelectorAll('.card')
   .forEach((item) => item.addEventListener('mouseover', () => expandCard(item)))
 
 document
   .querySelectorAll('.card')
-  .forEach((item) => item.addEventListener('mouseout', () => reduce(item)))
-
-const reduce = (element) => {
-  let postheader = element
-    .querySelector('.post .post_header')
-    .getBoundingClientRect().height
-  element.style.height = postheader + 'px'
-  return postheader
-}
-
-const expandCard = (element) => {
-  let postContent = element.querySelector('.post .post_content')
-  postContent.style.padding = '2rem'
-  const elementA = element.scrollHeight
-  element.style.height = elementA + 'px'
-}
+  .forEach((item) => item.addEventListener('mouseout', () => reduceCard(item)))
 
 document.querySelectorAll('button.btn-select').forEach((btnSelect) => {
   btnSelect.addEventListener('click', (event) => {
@@ -46,11 +53,12 @@ const setCssVariable = (element) => {
   }
 }
 
-document.querySelector('.cards-light').addEventListener('click' , event => {
+document.querySelector('.cards-light').addEventListener('click', (event) => {
   event.currentTarget.classList.toggle('active')
+  document
+    .querySelectorAll('.card')
+    .forEach((card) => card.classList.toggle('light'))
 })
 
-
-
-
 activeCurrentNavLink()
+

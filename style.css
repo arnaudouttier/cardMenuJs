@@ -1,7 +1,8 @@
 :root {
   --font_size: 20px;
   --primary_font: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --primary_color: rgb(214, 65, 65);
+  --primary_color: #000;
+  --black_color: #000;
   --red_color: rgb(214, 65, 65);
   --green_color: rgb(49, 122, 67);
   --blue_color: rgb(44, 33, 94);
@@ -82,6 +83,10 @@ button,
   height: 20px;
 }
 
+.btn-select.black {
+  background-color: var(--black_color);
+}
+
 .btn-select.red {
   background-color: var(--red_color);
 }
@@ -138,12 +143,12 @@ button,
   border-bottom: 2px solid var(--primary_color);
 }
 
-.card:hover .post h3 {
-  text-decoration: underline var(--primary_color);
-}
-
 .card.light {
   text-align: right;
+}
+
+.card.light:hover .post h3 {
+  text-decoration: underline var(--primary_color);
 }
 
 .post_header {
@@ -184,6 +189,7 @@ button,
 }
 
 .post button {
+  padding: 0.8rem 2rem;
   margin-top: 2rem;
 }
 

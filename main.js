@@ -2,7 +2,7 @@ const initCard = () => {
   document
     .querySelectorAll('.card').forEach(c => {
       let postHeaderHeight = c.querySelector('.post_header').getBoundingClientRect().height
-      c.style.height = postHeaderHeight + 'px'
+      c.style.height = `${postHeaderHeight}px`
     })
 }
 
@@ -19,16 +19,16 @@ const activeCurrentNavLink = () => {
 }
 
 const reduceCard = (element) => {
-  let postheader = element
+  let postHeader = element
     .querySelector('.post .post_header')
     .getBoundingClientRect().height
-  element.style.height = postheader + 'px'
+  element.style.height = `${postHeader}px`
 }
 
 const expandCard = (element) => {
   let post = element
     .querySelector('.post').getBoundingClientRect().height
-  element.style.height = post + 'px'
+  element.style.height = `${post}px`
 }
 
 document

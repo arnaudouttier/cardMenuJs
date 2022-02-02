@@ -103,7 +103,7 @@ button,
   background-color: var(--orange_color);
 }
 
-.btn-select.cards-light {
+.btn-select.cards-right {
   position: relative;
   width: 40px;
   -webkit-border-radius: 40px;
@@ -112,7 +112,7 @@ button,
   background: rgba(128, 128, 128, 0.561);
 }
 
-.btn-select.cards-light::before {
+.btn-select.cards-right::before {
   position: absolute;
   left: -5px;
   top: -3px;
@@ -124,7 +124,7 @@ button,
   transition: left 0.5s ease;
 }
 
-.btn-select.cards-light.active::before {
+.btn-select.cards-right.active::before {
   left: 50%;
   top: -3px;
 }
@@ -143,11 +143,11 @@ button,
   border-bottom: 2px solid var(--primary_color);
 }
 
-.card.light {
+.card.right {
   text-align: right;
 }
 
-.card.light:hover .post h3 {
+.card.right:hover .post h3 {
   text-decoration: underline var(--primary_color);
 }
 
@@ -159,11 +159,11 @@ button,
   padding: 0 0 3rem 0;
 }
 
-.card.light .post_header {
+.card.right .post_header {
   padding: 3rem 1rem;
 }
 
-.card.light .post_content {
+.card.right .post_content {
   padding: 0 1rem 3rem 1rem;
 }
 
@@ -171,7 +171,7 @@ button,
   font-size: calc(25px + 1.55vw);
   line-height: 1.1em;
   font-weight: 400;
-  letter-spacing: -0.2rem;
+  letter-spacing: -2px;
   color: var(--primary_color);
   margin-bottom: 2rem;
 }
@@ -214,11 +214,11 @@ button,
 
 #header ul {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 #header li {
-  margin-left: 1rem;
   display: inline-block;
   font-weight: 500;
   letter-spacing: 0.05rem;
@@ -279,6 +279,16 @@ form select {
 }
 
 /* MEDIA QUERIES */
+
+@media (min-width: 400px) {
+  #header ul {
+    justify-content: end;
+  }
+
+  #header li {
+    margin-left: 1rem;
+  }
+}
 
 @media (min-width: 1200px) {
   #main {

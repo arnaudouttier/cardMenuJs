@@ -1,8 +1,9 @@
 const initCard = () => {
-  const postheader = document
-    .querySelector('.post .post_header')
-    .getBoundingClientRect().height
-  document.querySelectorAll('.card').forEach(c => c.style.height = postheader + 'px')
+  document
+    .querySelectorAll('.card').forEach(c => {
+      let postHeaderHeight = c.querySelector('.post_header').getBoundingClientRect().height
+      c.style.height = postHeaderHeight + 'px'
+    })
 }
 
 initCard()
@@ -53,11 +54,11 @@ const setCssVariable = (element) => {
   }
 }
 
-document.querySelector('.cards-light').addEventListener('click', (event) => {
+document.querySelector('.cards-right').addEventListener('click', (event) => {
   event.currentTarget.classList.toggle('active')
   document
     .querySelectorAll('.card')
-    .forEach((card) => card.classList.toggle('light'))
+    .forEach((card) => card.classList.toggle('right'))
 })
 
 activeCurrentNavLink()
